@@ -1,5 +1,6 @@
 import 'package:dentsu/core/app_theme.dart';
-import 'package:dentsu/features/presentation/sign_in_screen.dart';
+import 'package:dentsu/features/auth/sign_in/presentation/sign_in_screen.dart';
+import 'package:dentsu/features/auth/sign_up/presentation/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
           title: 'Dentsu',
           theme: AppTheme.themeData(Brightness.light),
           darkTheme: AppTheme.themeData(Brightness.dark),
-          home: const SignInScreen(),
+          home: const SignUpScreen(),
         );
       },
     );
