@@ -11,5 +11,10 @@ class IAuthRemoteDataSource implements AuthRemoteDataSource{
   Future<Either<Failure,User?>>getCurrentUser() async {
     return await _firebaseAuthService.getCurrentUser();
   }
+  
+  @override
+  Future<Either<Failure, User?>> signInWithEmailAndPassword(String email, String password) async {
+    return await _firebaseAuthService.signInWithEmailAndPassword(email, password);
+  }
 
 }

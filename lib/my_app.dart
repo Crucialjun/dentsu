@@ -1,6 +1,5 @@
 import 'package:dentsu/core/app_theme.dart';
-import 'package:dentsu/features/auth/sign_in/presentation/sign_in_screen.dart';
-import 'package:dentsu/features/auth/sign_up/presentation/sign_up_screen.dart';
+import 'package:dentsu/features/auth/presentation/sign_up/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

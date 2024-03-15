@@ -4,4 +4,5 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class AuthRemoteDataSource {
   Future<Either<Failure,User?>> getCurrentUser();
+  Future<Either<Failure,User?>> signInWithEmailAndPassword(String email, String password);
 }

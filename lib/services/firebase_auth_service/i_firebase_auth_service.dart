@@ -16,7 +16,7 @@ class IFirebaseAuthService implements FirebaseAuthService {
   }
 
   @override
-  Future<Either<Failure, UserCredential>> signInWithEmailAndPassword(
+  Future<Either<Failure, User?>> signInWithEmailAndPassword(
       String email, String password) async {
     try {
       final credential =
@@ -24,7 +24,7 @@ class IFirebaseAuthService implements FirebaseAuthService {
         email: email,
         password: password,
       );
-      return right(credential);
+      return right(credential.user);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         return left(const Failure('The password provided is too weak.'));
