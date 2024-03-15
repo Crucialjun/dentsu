@@ -39,6 +39,10 @@ dependencies:
   flutter_svg: ^2.0.10+1
   google_fonts: ^6.2.1
   email_validator: ^2.1.17
+  firebase_core: ^2.27.1
+  firebase_auth: ^4.17.9
+  dartz: ^0.10.1
+  get_it: ^7.6.7
 
 dev_dependencies:
   flutter_test:

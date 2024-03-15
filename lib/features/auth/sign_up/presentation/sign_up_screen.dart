@@ -147,7 +147,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 40.h,
               ),
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      // Process data.
+                    }
+                  },
                   child: Text(
                     "Create Account",
                     style: TextStyle(

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "207360214950",
+    "project_id": "dentsu-95192",
+    "storage_bucket": "dentsu-95192.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207360214950:android:23ef90addaa24f1818b167",
+        "android_client_info": {
+          "package_name": "com.example.dentsu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP2U69kJW7qBFn6fhvQcTSzOTXYEUmlXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
