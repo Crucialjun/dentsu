@@ -1,12 +1,15 @@
 import 'package:dentsu/core/constants/app_assets.dart';
 import 'package:dentsu/core/constants/app_colors.dart';
+import 'package:dentsu/features/auth/presentation/sign_up/bloc/sign_up_bloc.dart';
 import 'package:dentsu/utils/app_text_form_field_validators.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class SignUpScreen extends StatefulWidget {
+  static const routeName = '/sign-up';
   const SignUpScreen({super.key});
 
   @override
@@ -81,6 +84,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 validator: (value) {
                   return AppTextFormFieldValidators.validateEmail(value);
                 },
+                controller: _emailController,
                 decoration: InputDecoration(
                     hintText: "Enter your email",
                     hintStyle: TextStyle(
@@ -108,6 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 validator: (value) {
                   return AppTextFormFieldValidators.validatePassword(value);
                 },
+                controller: _passwordController,
                 decoration: InputDecoration(
                     hintText: "Enter your Password",
                     hintStyle: TextStyle(
@@ -136,6 +141,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   return AppTextFormFieldValidators.validateConfirmPassword(
                       value: value, password: _passwordController.text);
                 },
+                controller: _confirmPasswordController,
                 decoration: InputDecoration(
                     hintText: "Confirm your Password",
                     hintStyle: TextStyle(
@@ -146,19 +152,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
               SizedBox(
                 height: 40.h,
               ),
-              ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      // Process data.
-                    }
-                  },
-                  child: Text(
+              ElevatedButton(onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  context.read<SignUpBloc>().add(
+                      SignUpWithEmailAndPasswordEvent(
+                          email: _emailController.text,
+                          password: _confirmPasswordController.text));
+                }
+              }, child: BlocBuilder<SignUpBloc, SignUpState>(
+                builder: (context, state) {
+                  if (state is SignUpLoading) {
+                    return const CircularProgressIndicator();
+                  }
+                  return Text(
                     "Create Account",
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w700,
                         fontSize: 16.sp),
-                  )),
+                  );
+                },
+              )),
             ]),
           ),
         ),
