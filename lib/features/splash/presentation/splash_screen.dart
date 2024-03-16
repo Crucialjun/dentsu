@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Text('Dentsu',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 36.sp,
+                fontSize: 36,
                 fontWeight: FontWeight.bold,
               )),
           SizedBox(

@@ -9,4 +9,5 @@ class AppColors {
   static const badgeColor = Color(0xFF34B53A);
   static const scaffoldBackgroundColor = Color(0xFFF2F2F2);
   static const unselectedColor = Color(0xFFD0CDCE);
+  static const graphUnfilledColor = Color(0xFFFFE5D3);
 }

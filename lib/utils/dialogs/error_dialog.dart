@@ -22,7 +22,7 @@ class ErrorDialog extends StatelessWidget {
             children: [
               Text(
                 'Error',
-                style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 16.h,
@@ -37,7 +37,7 @@ class ErrorDialog extends StatelessWidget {
               ),
               Text(
                 message,
-                style: TextStyle(fontSize: 16.sp),
+                style: TextStyle(fontSize: 16),
               ),
               SizedBox(
                 height: 16.h,

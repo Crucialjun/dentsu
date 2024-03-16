@@ -50,7 +50,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       SizedBox(
                         height: 40.h,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Flexible(
@@ -58,7 +58,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 28.sp,
+                                    fontSize: 28,
                                     fontWeight: FontWeight.w700)),
                           ),
                         ],
@@ -66,7 +66,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       SizedBox(
                         height: 13.h,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Flexible(
@@ -75,7 +75,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 16.sp,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w400)),
                           ),
                         ],
@@ -83,12 +83,12 @@ class _SignInScreenState extends State<SignInScreen> {
                       SizedBox(
                         height: 61.h,
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Text("Username",
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16.sp,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w700)),
                         ],
                       ),
@@ -97,22 +97,22 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       TextFormField(
                         controller: _emailController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             hintText: "Enter your email or username",
                             hintStyle: TextStyle(
                                 color: AppColors.hintTextColor,
-                                fontSize: 16.sp,
+                                fontSize: 16,
                                 fontWeight: FontWeight.w400)),
                       ),
                       SizedBox(
                         height: 25.h,
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Text("Password",
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16.sp,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w700)),
                         ],
                       ),
@@ -121,11 +121,11 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       TextFormField(
                         controller: _passwordController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             hintText: "Enter your Password",
                             hintStyle: TextStyle(
                                 color: AppColors.hintTextColor,
-                                fontSize: 16.sp,
+                                fontSize: 16,
                                 fontWeight: FontWeight.w400)),
                       ),
                       SizedBox(
@@ -150,10 +150,10 @@ class _SignInScreenState extends State<SignInScreen> {
                             SizedBox(
                               width: 11.w,
                             ),
-                            Text("Keep me logged in",
+                            const Text("Keep me logged in",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 16.sp,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w700)),
                           ],
                         ),
@@ -170,12 +170,12 @@ class _SignInScreenState extends State<SignInScreen> {
                           },
                           child: state is SignInLoading
                               ? const CircularProgressIndicator()
-                              : Text(
+                              : const Text(
                                   "Log In",
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w700,
-                                      fontSize: 16.sp),
+                                      fontSize: 16),
                                 )),
                       SizedBox(
                         height: 20.h,
@@ -186,12 +186,12 @@ class _SignInScreenState extends State<SignInScreen> {
                               .read<SignInBloc>()
                               .add(DontHaveAnAccountEvent());
                         },
-                        child: Text(
+                        child: const Text(
                           "Don't have an account? Sign Up",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w400,
-                              fontSize: 18.sp),
+                              fontSize: 18),
                         ),
                       ),
                     ]),

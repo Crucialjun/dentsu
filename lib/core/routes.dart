@@ -2,6 +2,7 @@ import 'package:dentsu/features/auth/presentation/sign_in/bloc/sign_in_bloc.dart
 import 'package:dentsu/features/auth/presentation/sign_in/sign_in_screen.dart';
 import 'package:dentsu/features/auth/presentation/sign_up/bloc/sign_up_bloc.dart';
 import 'package:dentsu/features/auth/presentation/sign_up/sign_up_screen.dart';
+import 'package:dentsu/features/bottom_nav_holder/presentation/bloc/bottom_nav_holder_bloc.dart';
 import 'package:dentsu/features/bottom_nav_holder/presentation/bottom_nav_holder_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,10 +24,11 @@ class Routes {
           settings: settings,
         );
       case BottomNavigationHolder.routeName:
-        return MaterialPageRoute(
-          settings: settings,
-          builder: (_) => const BottomNavigationHolder(),
-        );
+        return _registerBlocView(
+            view: const BottomNavigationHolder(),
+            bloc: BottomNavHolderBloc(),
+            settings: settings);
+
       default:
         return MaterialPageRoute(
             builder: (context) => Scaffold(

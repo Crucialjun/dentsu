@@ -59,7 +59,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 28.sp,
+                            fontSize: 28,
                             fontWeight: FontWeight.w700)),
                   ),
                 ],
@@ -72,7 +72,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   Text("Email",
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16.sp,
+                          fontSize: 16,
                           fontWeight: FontWeight.w700)),
                 ],
               ),
@@ -89,7 +89,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     hintText: "Enter your email",
                     hintStyle: TextStyle(
                         color: AppColors.hintTextColor,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontWeight: FontWeight.w400)),
               ),
               SizedBox(
@@ -100,7 +100,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   Text("Password",
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16.sp,
+                          fontSize: 16,
                           fontWeight: FontWeight.w700)),
                 ],
               ),
@@ -117,7 +117,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     hintText: "Enter your Password",
                     hintStyle: TextStyle(
                         color: AppColors.hintTextColor,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontWeight: FontWeight.w400)),
               ),
               SizedBox(
@@ -128,7 +128,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   Text("Confirm Password",
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16.sp,
+                          fontSize: 16,
                           fontWeight: FontWeight.w700)),
                 ],
               ),
@@ -146,7 +146,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     hintText: "Confirm your Password",
                     hintStyle: TextStyle(
                         color: AppColors.hintTextColor,
-                        fontSize: 16.sp,
+                        fontSize: 16,
                         fontWeight: FontWeight.w400)),
               ),
               SizedBox(
@@ -169,7 +169,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w700,
-                        fontSize: 16.sp),
+                        fontSize: 16),
                   );
                 },
               )),

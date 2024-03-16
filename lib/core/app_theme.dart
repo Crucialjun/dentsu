@@ -28,7 +28,7 @@ class AppTheme {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           backgroundColor: Colors.white,
-         
+    
           selectedItemColor: AppColors.primaryColor,
           unselectedItemColor: AppColors.unselectedColor,
         ),

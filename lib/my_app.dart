@@ -25,7 +25,6 @@ class MyApp extends StatelessWidget {
           navigatorKey: INavigationService.navigatorKey,
           title: 'Dentsu',
           theme: AppTheme.themeData(Brightness.light),
-          darkTheme: AppTheme.themeData(Brightness.dark),
           home: BlocProvider(
             create: (context) => SplashBloc()..add(SplashInitEvent()),
             child: const SplashScreen(),

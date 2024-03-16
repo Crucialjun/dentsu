@@ -1,4 +1,8 @@
+import 'package:dentsu/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,11 +10,297 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
-      body: const Center(
-        child: Text('Home Screen'),
+      backgroundColor: AppColors.scaffoldBackgroundColor,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 19.w),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 40.h,
+            ),
+            const Text(
+              "Dashboard",
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            SizedBox(height: 20.h),
+            SizedBox(
+              height: 376.h,
+              child: ListView(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container(
+                    width: 280.w,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20.r),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 26.w, vertical: 20.h),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text("Total Leads",
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w500,
+                                  )),
+                              Icon(
+                                Icons.more_horiz,
+                                size: 21.r,
+                              ),
+                            ],
+                          ),
+                          SfRadialGauge(
+                            enableLoadingAnimation: true,
+                            axes: [
+                              RadialAxis(
+                                radiusFactor: 0.8,
+                                annotations: [
+                                  GaugeAnnotation(
+                                      widget: Container(
+                                          width: 74.w,
+                                          height: 74.h,
+                                          decoration: const BoxDecoration(
+                                            color: AppColors.primaryColor,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Center(
+                                            child: Padding(
+                                              padding: EdgeInsets.all(18.r),
+                                              child: const Text(
+                                                "47%",
+                                                style: TextStyle(
+                                                  fontSize: 22,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                          )))
+                                ],
+                                axisLineStyle: const AxisLineStyle(
+                                  color: AppColors.graphUnfilledColor,
+                                  thickness: 16,
+                                  thicknessUnit: GaugeSizeUnit.logicalPixel,
+                                ),
+                                startAngle: 270,
+                                endAngle: 270,
+                                showLabels: false,
+                                ranges: [
+                                  GaugeRange(
+                                      color: AppColors.primaryColor,
+                                      startValue: 0,
+                                      startWidth: 16,
+                                      endWidth: 16,
+                                      endValue: 47)
+                                ],
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 11.r,
+                                height: 11.r,
+                                decoration: BoxDecoration(
+                                  color: AppColors.primaryColor,
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5.w,
+                              ),
+                              const Text(
+                                "Contacted ",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              const Text(
+                                "1.7K",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              const Expanded(child: SizedBox()),
+                              Container(
+                                width: 11.r,
+                                height: 11.r,
+                                decoration: BoxDecoration(
+                                  color: AppColors.graphUnfilledColor,
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5.w,
+                              ),
+                              const Text(
+                                "Total Leads ",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              const Text(
+                                "1.7K",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20.w,
+                  ),
+                  Container(
+                    width: 280.w,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20.r),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 26.w, vertical: 20.h),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text("Leads",
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w500,
+                                  )),
+                              Icon(
+                                Icons.more_horiz,
+                                size: 21.r,
+                              ),
+                            ],
+                          ),
+                          SfRadialGauge(
+                            axes: [
+                              RadialAxis(
+                                radiusFactor: 0.8,
+                                annotations: [
+                                  GaugeAnnotation(
+                                      widget: Container(
+                                          width: 74.w,
+                                          height: 74.h,
+                                          decoration: const BoxDecoration(
+                                            color: AppColors.primaryColor,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Center(
+                                            child: Padding(
+                                              padding: EdgeInsets.all(18.r),
+                                              child: const Text(
+                                                "47%",
+                                                style: TextStyle(
+                                                  fontSize: 22,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                          )))
+                                ],
+                                axisLineStyle: const AxisLineStyle(
+                                  color: AppColors.graphUnfilledColor,
+                                  thickness: 16,
+                                  thicknessUnit: GaugeSizeUnit.logicalPixel,
+                                ),
+                                startAngle: 270,
+                                endAngle: 270,
+                                showLabels: false,
+                                ranges: [
+                                  GaugeRange(
+                                      color: AppColors.primaryColor,
+                                      startValue: 0,
+                                      startWidth: 16,
+                                      endWidth: 16,
+                                      endValue: 47)
+                                ],
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 11.r,
+                                height: 11.r,
+                                decoration: BoxDecoration(
+                                  color: AppColors.primaryColor,
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5.w,
+                              ),
+                              const Text(
+                                "Contacted ",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              const Text(
+                                "1.7K",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              const Expanded(child: SizedBox()),
+                              Container(
+                                width: 11.r,
+                                height: 11.r,
+                                decoration: BoxDecoration(
+                                  color: AppColors.graphUnfilledColor,
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5.w,
+                              ),
+                              const Text(
+                                "Total Leads ",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              const Text(
+                                "1.7K",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

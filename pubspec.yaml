@@ -47,6 +47,7 @@ dependencies:
   flutter_bloc: ^8.1.4
   logger: ^2.1.0
   badges: ^3.1.2
+  syncfusion_flutter_gauges: ^25.1.35
 
 dev_dependencies:
   flutter_test:
