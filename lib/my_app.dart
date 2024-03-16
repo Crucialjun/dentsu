@@ -3,6 +3,8 @@ import 'package:dentsu/core/routes.dart';
 import 'package:dentsu/features/auth/presentation/sign_in/bloc/sign_in_bloc.dart';
 import 'package:dentsu/features/auth/presentation/sign_in/sign_in_screen.dart';
 import 'package:dentsu/features/auth/presentation/sign_up/sign_up_screen.dart';
+import 'package:dentsu/features/splash/presentation/bloc/splash_bloc.dart';
+import 'package:dentsu/features/splash/presentation/splash_screen.dart';
 import 'package:dentsu/services/navigation_service/navigation_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,8 +27,8 @@ class MyApp extends StatelessWidget {
           theme: AppTheme.themeData(Brightness.light),
           darkTheme: AppTheme.themeData(Brightness.dark),
           home: BlocProvider(
-            create: (context) => SignInBloc(),
-            child: const SignInScreen(),
+            create: (context) => SplashBloc()..add(SplashInitEvent()),
+            child: const SplashScreen(),
           ),
           onGenerateRoute: (settings) => Routes.generateRoute(settings),
         );
