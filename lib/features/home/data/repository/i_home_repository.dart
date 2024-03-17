@@ -12,4 +12,16 @@ class IHomeRepository implements HomeRepository{
     return await _remoteDataSource.getLeads(startAt: startAt, limit: limit);
   }
   
+  @override
+  Future<Either<Failure, int>> getAllLeadsCount() async{
+    return await _remoteDataSource.getAllLeadsCount();
+    
+  }
+  
+  @override
+  Future<Either<Failure, int>> getContactedLeadsCount() async{
+    return await _remoteDataSource.getContactedLeadsCount();
+    
+  }
+  
 }

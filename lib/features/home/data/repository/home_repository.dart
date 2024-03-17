@@ -4,4 +4,6 @@ import 'package:dentsu/core/models/lead_model.dart';
 
 abstract class HomeRepository{
   Future<Either<Failure, List<Lead>>> getLeads({required int startAt, required int limit});
+  Future<Either<Failure, int>> getAllLeadsCount();
+  Future<Either<Failure, int>> getContactedLeadsCount();
 }

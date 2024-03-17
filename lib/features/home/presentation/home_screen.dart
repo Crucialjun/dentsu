@@ -22,12 +22,16 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 height: 40.h,
               ),
-              const Text(
-                "Dashboard",
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w500,
-                ),
+              const Row(
+                children: [
+                  Text(
+                    "Dashboard",
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 20.h),
               SizedBox(
@@ -36,7 +40,20 @@ class HomeScreen extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   children: [
-                    const TotalLeadsGauge(),
+                    BlocBuilder<HomeBloc, HomeState>(
+                      buildWhen: (previous, current) {
+                        return current is HomeLeadsCountLoaded;
+                      },
+                      builder: (context, state) {
+                        if (state is HomeLeadsCountLoaded) {
+                          return TotalLeadsGauge(
+                            totalLeads: state.totalLeads,
+                            contactedLeads: state.contactedLeadsCount,
+                          );
+                        }
+                        return Container();
+                      },
+                    ),
                     SizedBox(
                       width: 20.w,
                     ),
@@ -47,11 +64,15 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 height: 40.h,
               ),
-              const Text("New Leads",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w500,
-                  )),
+              const Row(
+                children: [
+                  Text("New Leads",
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.w500,
+                      )),
+                ],
+              ),
               SizedBox(
                 height: 26.h,
               ),
@@ -114,8 +135,32 @@ class HomeScreen extends StatelessWidget {
                             SizedBox(
                               height: 42.h,
                             ),
-                            const NumberPaginator(
-                              numberPages: 10,
+                            Row(
+                              children: [
+                                Text(
+                                  "Showing ${(state.currentPageIndex) * 10 - 9} to ${(state.currentPageIndex) * 10} of ${state.totalLeads}",
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 25.h,
+                            ),
+                            NumberPaginator(
+                              onPageChange: (int page) {
+                                print(page);
+                              },
+                              numberPages: state.totalLeads ~/ 10,
+                              config: const NumberPaginatorUIConfig(
+                                  buttonTextStyle: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  buttonUnselectedForegroundColor:
+                                      Colors.black),
                             )
                           ],
                         ),
@@ -124,7 +169,10 @@ class HomeScreen extends StatelessWidget {
                     return Container();
                   },
                 ),
-              )
+              ),
+              SizedBox(
+                height: 30.h,
+              ),
             ],
           ),
         ),

@@ -6,11 +6,12 @@ import 'package:dentsu/core/usecase.dart';
 import 'package:dentsu/features/home/data/repository/home_repository.dart';
 import 'package:dentsu/features/home/domain/params/get_leads_params.dart';
 
-class GetLeadsUsecase
-    with UseCases<Either<Failure, List<Lead>>, GetLeadsParams> {
+class GetPaginatedLeadsUsecase
+    with UseCases<Either<Failure, List<Lead>>, GetPaginatedLeadsParams> {
   final _repository = locator<HomeRepository>();
   @override
-  Future<Either<Failure, List<Lead>>> call(GetLeadsParams params) async {
+  Future<Either<Failure, List<Lead>>> call(
+      GetPaginatedLeadsParams params) async {
     return await _repository.getLeads(
         startAt: params.startAt, limit: params.limit);
   }

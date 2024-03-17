@@ -1,7 +1,6 @@
-class GetLeadsParams {
+class GetPaginatedLeadsParams {
   final int startAt;
   final int limit;
 
-  GetLeadsParams({required this.startAt, required this.limit});
-  
+  GetPaginatedLeadsParams({required this.startAt, required this.limit});
 }

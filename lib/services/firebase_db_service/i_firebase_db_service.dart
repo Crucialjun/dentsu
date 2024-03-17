@@ -31,4 +31,28 @@ class IFirebaseDbService implements FirebaseDbService {
       return Left(Failure(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, int>> getAllLeadsCount() async {
+    try {
+      var res = await _db.collection(DbKeys.leadsTableName).count().get();
+      return Right(res.count ?? 0);
+    } catch (e) {
+      _logger.e(e);
+      return Left(Failure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, int>> getContactedLeadsCount() async{
+    try{
+      var res = await _db.collection(DbKeys.leadsTableName).where('isContacted',isEqualTo: true).count().get();
+      return Right(res.count ?? 0);
+
+    }catch (e){
+      _logger.e(e);
+      return Left(Failure(e.toString()));
+    }
+    
+  }
 }

@@ -6,19 +6,23 @@ import 'package:syncfusion_flutter_gauges/gauges.dart';
 class TotalLeadsGauge extends StatelessWidget {
   const TotalLeadsGauge({
     super.key,
+    required this.totalLeads,
+    required this.contactedLeads,
   });
+
+  final int totalLeads;
+  final int contactedLeads;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 280.w,
+      width: 290.w,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20.r),
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: 26.w, vertical: 20.h),
+        padding: EdgeInsets.symmetric(horizontal: 26.w, vertical: 20.h),
         child: Column(
           children: [
             Row(
@@ -44,24 +48,26 @@ class TotalLeadsGauge extends StatelessWidget {
                     annotations: [
                       GaugeAnnotation(
                           widget: Container(
-                              width: 74.w,
-                              height: 74.h,
                               decoration: const BoxDecoration(
                                 color: AppColors.primaryColor,
                                 shape: BoxShape.circle,
                               ),
-                              child: Center(
-                                child: Padding(
-                                  padding: EdgeInsets.all(18.r),
-                                  child: const Text(
-                                    "47%",
-                                    style: TextStyle(
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.white,
+                              child: Wrap(
+                                children: [
+                                  Center(
+                                    child: Padding(
+                                      padding: EdgeInsets.all(28.r),
+                                      child: Text(
+                                        "${(contactedLeads / totalLeads * 100)}%",
+                                        style: const TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white,
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
+                                ],
                               )))
                     ],
                     axisLineStyle: const AxisLineStyle(
@@ -78,7 +84,7 @@ class TotalLeadsGauge extends StatelessWidget {
                           startValue: 0,
                           startWidth: 16,
                           endWidth: 16,
-                          endValue: 47)
+                          endValue: contactedLeads / totalLeads * 100)
                     ],
                   )
                 ],
@@ -104,9 +110,9 @@ class TotalLeadsGauge extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                const Text(
-                  "1.7K",
-                  style: TextStyle(
+                Text(
+                  "$contactedLeads",
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
@@ -130,9 +136,9 @@ class TotalLeadsGauge extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                const Text(
-                  "1.7K",
-                  style: TextStyle(
+                Text(
+                  "$totalLeads",
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
