@@ -1,6 +1,7 @@
 import 'package:dentsu/core/constants/app_assets.dart';
 import 'package:dentsu/core/constants/app_colors.dart';
 import 'package:dentsu/core/models/lead_model.dart';
+import 'package:dentsu/features/home/presentation/lead_details/components/lead_details_tab.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -83,36 +84,36 @@ class _LeadDetailsScreenState extends State<LeadDetailsScreen>
               SizedBox(
                 height: 36.h,
               ),
-              Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(
+              InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Row(
+                  children: [
+                    Icon(
                       Icons.arrow_back,
                       size: 16.r,
                       color: AppColors.primaryColor,
                     ),
-                  ),
-                  const Text(
-                    "Back to all leads ",
-                    style: TextStyle(
+                    const Text(
+                      "Back to all leads ",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.primaryColor),
+                    ),
+                    SizedBox(
+                      width: 18.w,
+                    ),
+                    Text(
+                      " / ${widget.lead.index}",
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
-                        color: AppColors.primaryColor),
-                  ),
-                  SizedBox(
-                    width: 18.w,
-                  ),
-                  Text(
-                    " / ${widget.lead.index}",
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               SizedBox(
                 height: 41.h,
@@ -417,30 +418,36 @@ class _LeadDetailsScreenState extends State<LeadDetailsScreen>
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16.r),
                 ),
-                child: Column(
-                  children: [
-                    TabBar(
-                      labelStyle: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      controller: _tabController,
-                      tabs: const [
-                        Tab(
-                          text: "Lead Details",
+                child: Padding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 41.h, horizontal: 42.w),
+                  child: Column(
+                    children: [
+                      TabBar(
+                        labelStyle: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
                         ),
-                        Tab(
-                          text: "Assigned Lead",
-                        )
-                      ],
-                    ),
-                    Expanded(
-                      child: TabBarView(
-                         
-                          controller: _tabController,
-                          children: [Container(), Container()]),
-                    )
-                  ],
+                        controller: _tabController,
+                        tabs: const [
+                          Tab(
+                            text: "Lead Details",
+                          ),
+                          Tab(
+                            text: "Assigned Lead",
+                          )
+                        ],
+                      ),
+                      Expanded(
+                        child: TabBarView(
+                            controller: _tabController,
+                            children: [
+                              LeadDetailsTabView(lead: widget.lead),
+                              Container()
+                            ]),
+                      )
+                    ],
+                  ),
                 ),
               )
             ],
