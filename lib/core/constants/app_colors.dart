@@ -14,4 +14,5 @@ class AppColors {
   static const tableOddBackgroundColor = Color(0xFFFAf8F8);
   static const leadStatusGradientStart = Color(0xFF5ABEA6);
   static const leadStatusGradientEnd = Color(0xFF863AAC);
+  static const inputFieldOutlineColor = Color(0xFFDFDEDE);
 }

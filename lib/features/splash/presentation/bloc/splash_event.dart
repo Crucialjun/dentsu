@@ -7,4 +7,4 @@ sealed class SplashEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class SplashInitEvent extends SplashEvent{}
+class SplashInitEvent extends SplashEvent {}

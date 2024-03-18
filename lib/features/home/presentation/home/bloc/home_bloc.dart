@@ -54,8 +54,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   FutureOr<void> _paginationPageChanged(
       PaginationPageChangedEvent event, Emitter<HomeState> emit) async {
     emit(HomeLeadsLoading());
-    Logger().i("Page changed to: ${event.page + 1}");
-    Logger().i("Start at: ${((event.page + 1) * 10) - 9}");
+    
     await GetPaginatedLeadsUsecase()
         .call(GetPaginatedLeadsParams(
             startAt: ((event.page + 1) * 10) - 9, limit: 10))

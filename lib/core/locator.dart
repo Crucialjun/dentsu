@@ -6,6 +6,10 @@ import 'package:dentsu/features/home/data/data_sources/remote_data_source/home_r
 import 'package:dentsu/features/home/data/data_sources/remote_data_source/i_home_remote_data_source.dart';
 import 'package:dentsu/features/home/data/repository/home_repository.dart';
 import 'package:dentsu/features/home/data/repository/i_home_repository.dart';
+import 'package:dentsu/features/quotes/data/data_sources/remote_data_source/i_quotes_remote_data_source.dart';
+import 'package:dentsu/features/quotes/data/data_sources/remote_data_source/quotes_remote_data_source.dart';
+import 'package:dentsu/features/quotes/data/repository/i_quotes_repository.dart';
+import 'package:dentsu/features/quotes/data/repository/quotes_repository.dart';
 import 'package:dentsu/services/dialog_and_sheet_service/dialog_and_sheet_service.dart';
 import 'package:dentsu/services/dialog_and_sheet_service/i_dialog_and_sheet_service.dart';
 import 'package:dentsu/services/firebase_auth_service/firebase_auth_service.dart';
@@ -31,4 +35,7 @@ Future setUpLocator() async {
   locator.registerLazySingleton<HomeRemoteDataSource>(
       () => IHomeRemoteDataSource());
   locator.registerLazySingleton<FirebaseDbService>(() => IFirebaseDbService());
+  locator.registerLazySingleton<QuotesRemoteDataSource>(
+      () => IQuotesRemoteDataSource());
+  locator.registerLazySingleton<QuotesRepository>(() => IQuotesRepository());
 }

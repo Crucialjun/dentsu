@@ -1,7 +1,8 @@
 import 'package:dentsu/core/constants/app_assets.dart';
 import 'package:dentsu/core/constants/app_colors.dart';
 import 'package:dentsu/features/bottom_nav_holder/presentation/bloc/bottom_nav_holder_bloc.dart';
-import 'package:dentsu/features/business/presentation/business_screen.dart';
+import 'package:dentsu/features/quotes/presentation/quotes/bloc/quotes_bloc.dart';
+import 'package:dentsu/features/quotes/presentation/quotes/quotes_screen.dart';
 import 'package:dentsu/features/home/presentation/home/bloc/home_bloc.dart';
 import 'package:dentsu/features/home/presentation/home/home_screen.dart';
 import 'package:dentsu/features/leads/presentation/leads_screen.dart';
@@ -21,7 +22,7 @@ class BottomNavigationHolder extends StatelessWidget {
     List<Widget> screens = [
       const HomeScreen(),
       const LeadsScreen(),
-      const BusinessScreen(),
+      const QuotesScreen(),
       const ProfileScreen(),
     ];
     return BlocBuilder<BottomNavHolderBloc, BottomNavHolderState>(
@@ -30,6 +31,9 @@ class BottomNavigationHolder extends StatelessWidget {
           providers: [
             BlocProvider(
               create: (context) => HomeBloc()..add(HomeInitEvent()),
+            ),
+            BlocProvider(
+              create: (context) => QuotesBloc()..add(InitialQuotesEvent()),
             ),
           ],
           child: Scaffold(

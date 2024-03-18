@@ -9,8 +9,7 @@ class AppTextFormFieldValidators {
     bool isEmailValid = EmailValidator.validate(value);
 
     bool isValidUsername(String? value) =>
-        RegExp('[a-zA-Z]')
-            .hasMatch(value ?? '');
+        RegExp('[a-zA-Z]').hasMatch(value ?? '');
 
     if (!isEmailValid && !isValidUsername(value)) {
       return 'Please enter a valid email or username';

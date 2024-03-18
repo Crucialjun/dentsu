@@ -16,7 +16,7 @@ final class HomeLeadsLoaded extends HomeState {
   final int totalLeads;
   final int currentPageIndex;
 
-  const HomeLeadsLoaded(this.leads, this.totalLeads,this.currentPageIndex);
+  const HomeLeadsLoaded(this.leads, this.totalLeads, this.currentPageIndex);
 
   @override
   List<Object> get props => [leads, totalLeads];

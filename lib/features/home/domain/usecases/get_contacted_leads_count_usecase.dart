@@ -4,11 +4,11 @@ import 'package:dentsu/core/locator.dart';
 import 'package:dentsu/core/usecase.dart';
 import 'package:dentsu/features/home/data/repository/home_repository.dart';
 
-class GetContactedLeadsCountUsecase with UseCases<Either<Failure,int>,NoParams>{
+class GetContactedLeadsCountUsecase
+    with UseCases<Either<Failure, int>, NoParams> {
   final _repo = locator<HomeRepository>();
   @override
   Future<Either<Failure, int>> call(NoParams params) async {
     return _repo.getContactedLeadsCount();
   }
-
 }

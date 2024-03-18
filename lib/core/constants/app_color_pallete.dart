@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-const MaterialColor dentsupallete = MaterialColor(_dentsupalletePrimaryValue, <int, Color>{
+const MaterialColor dentsupallete =
+    MaterialColor(_dentsupalletePrimaryValue, <int, Color>{
   50: Color(0xFFF0E7F5),
   100: Color(0xFFDBC4E6),
   200: Color(0xFFC39DD6),
@@ -12,12 +13,13 @@ const MaterialColor dentsupallete = MaterialColor(_dentsupalletePrimaryValue, <i
   800: Color(0xFF692592),
   900: Color(0xFF561882),
 });
- const int _dentsupalletePrimaryValue = 0xFF863AAC;
+const int _dentsupalletePrimaryValue = 0xFF863AAC;
 
- const MaterialColor dentsupalleteAccent = MaterialColor(_dentsupalleteAccentValue, <int, Color>{
+const MaterialColor dentsupalleteAccent =
+    MaterialColor(_dentsupalleteAccentValue, <int, Color>{
   100: Color(0xFFE0BAFF),
   200: Color(_dentsupalleteAccentValue),
   400: Color(0xFFB354FF),
   700: Color(0xFFA73BFF),
 });
- const int _dentsupalleteAccentValue = 0xFFC987FF;
+const int _dentsupalleteAccentValue = 0xFFC987FF;

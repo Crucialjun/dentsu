@@ -1,4 +1,4 @@
-class SignInWithEmailParams{
+class SignInWithEmailParams {
   final String email;
   final String password;
 

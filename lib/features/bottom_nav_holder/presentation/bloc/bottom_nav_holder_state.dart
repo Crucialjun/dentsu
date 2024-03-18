@@ -1,7 +1,7 @@
 part of 'bottom_nav_holder_bloc.dart';
 
 class BottomNavHolderState extends Equatable {
-  const BottomNavHolderState({ this.currentIndex = 0});
+  const BottomNavHolderState({this.currentIndex = 0});
 
   final int currentIndex;
 

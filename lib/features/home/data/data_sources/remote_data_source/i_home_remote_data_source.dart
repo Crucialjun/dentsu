@@ -12,14 +12,14 @@ class IHomeRemoteDataSource implements HomeRemoteDataSource {
       {required int startAt, required int limit}) async {
     return await _dbService.getPaginatedLeads(startAt: startAt, limit: limit);
   }
-  
+
   @override
-  Future<Either<Failure, int>> getAllLeadsCount() async{
+  Future<Either<Failure, int>> getAllLeadsCount() async {
     return await _dbService.getAllLeadsCount();
   }
-  
+
   @override
-  Future<Either<Failure, int>> getContactedLeadsCount() async{
+  Future<Either<Failure, int>> getContactedLeadsCount() async {
     return await _dbService.getContactedLeadsCount();
   }
 }

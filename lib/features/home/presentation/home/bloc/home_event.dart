@@ -18,7 +18,6 @@ final class PaginationPageChangedEvent extends HomeEvent {
   List<Object> get props => [page];
 }
 
-
 final class OnLeadSelectedEvent extends HomeEvent {
   final Lead lead;
 
