@@ -1,9 +1,11 @@
+import 'package:dentsu/core/models/lead_model.dart';
 import 'package:dentsu/features/auth/presentation/sign_in/bloc/sign_in_bloc.dart';
 import 'package:dentsu/features/auth/presentation/sign_in/sign_in_screen.dart';
 import 'package:dentsu/features/auth/presentation/sign_up/bloc/sign_up_bloc.dart';
 import 'package:dentsu/features/auth/presentation/sign_up/sign_up_screen.dart';
 import 'package:dentsu/features/bottom_nav_holder/presentation/bloc/bottom_nav_holder_bloc.dart';
 import 'package:dentsu/features/bottom_nav_holder/presentation/bottom_nav_holder_screen.dart';
+import 'package:dentsu/features/home/presentation/lead_details/lead_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,6 +30,15 @@ class Routes {
             view: const BottomNavigationHolder(),
             bloc: BottomNavHolderBloc(),
             settings: settings);
+
+      case LeadDetailsScreen.routeName:
+        final args = settings.arguments as Lead;
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (context) => LeadDetailsScreen(
+            lead: args,
+          ),
+        );
 
       default:
         return MaterialPageRoute(

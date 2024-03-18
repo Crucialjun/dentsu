@@ -10,4 +10,5 @@ class AppAssets{
   static const String leads = 'assets/svg/leads.svg';
   static const String business = 'assets/svg/business.svg';
   static const String profile = 'assets/svg/profile.svg';
+  static const String cancel = 'assets/svg/cancel.svg';
 }
