@@ -15,4 +15,5 @@ class AppColors {
   static const leadStatusGradientStart = Color(0xFF5ABEA6);
   static const leadStatusGradientEnd = Color(0xFF863AAC);
   static const inputFieldOutlineColor = Color(0xFFDFDEDE);
+  static const inactiveSwitchColor = Color(0xFF444444);
 }
