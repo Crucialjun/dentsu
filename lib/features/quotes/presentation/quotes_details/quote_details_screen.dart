@@ -1,6 +1,8 @@
 import 'package:dentsu/core/constants/app_colors.dart';
 import 'package:dentsu/core/models/quote.dart';
+import 'package:dentsu/features/quotes/presentation/components/quote_benefits_tab.dart';
 import 'package:dentsu/features/quotes/presentation/components/quote_information_tab.dart';
+import 'package:dentsu/features/quotes/presentation/components/quote_setup_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -99,8 +101,8 @@ class _QuoteDetailsScreenState extends State<QuoteDetailsScreen>
               controller: _tabController,
               children: [
                 QuoteInformationTab(quote: widget.quote),
-                QuoteInformationTab(quote: widget.quote),
-                QuoteInformationTab(quote: widget.quote)
+                QuoteSetupTab(quote: widget.quote),
+                QuoteBenefitsTab(quote: widget.quote)
               ],
             ))
           ],
