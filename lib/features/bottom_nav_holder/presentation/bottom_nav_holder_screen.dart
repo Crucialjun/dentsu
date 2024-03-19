@@ -79,7 +79,10 @@ class BottomNavigationHolder extends StatelessWidget {
                 ),
               ],
             ),
-            body: screens.elementAt(state.currentIndex),
+            body: IndexedStack(
+              index: state.currentIndex,
+              children: screens,
+            ),
             bottomNavigationBar: ClipRRect(
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20.r),
